@@ -1,0 +1,23 @@
+From af3c6aa5ecb33c5a8f20eb9562af769146a3b544 Mon Sep 17 00:00:00 2001
+From: khaledmalhal <khaled.malhal@estudiantat.upc.edu>
+Date: Tue, 3 Dec 2024 11:33:06 +0000
+Subject: [PATCH] Change of sys/sysctl.h to linux/sysctl.h since it is
+ deprecated in glic
+
+---
+ src/tools/mhd_tool_get_cpu_count.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/tools/mhd_tool_get_cpu_count.c b/src/tools/mhd_tool_get_cpu_count.c
+index dc01e51..2ca25a4 100644
+--- a/src/tools/mhd_tool_get_cpu_count.c
++++ b/src/tools/mhd_tool_get_cpu_count.c
+@@ -42,7 +42,7 @@
+ #  include <string.h>
+ #endif /* HAVE_STRING_H */
+ #ifdef HAVE_SYS_SYSCTL_H
+-#  include <sys/sysctl.h>
++#  include <linux/sysctl.h>
+ #endif /* HAVE_SYS_SYSCTL_H */
+ #ifdef HAVE_FEATURES_H
+ #  include <features.h>
